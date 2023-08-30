@@ -81,16 +81,22 @@ build out any helper methods if needed.
 - `CoffeeOrder property customer()`
   - Returns the Customer that the CoffeeOrder is associated with as an instance
   - If the CoffeeOrder is not associated with a Customer returns `None`
-  - When setting the customer, if the argument is a `Customer` instance it associates the
-  CoffeeOrder with the customer
+  - When setting the customer, if the argument is a `Customer` instance it
+  associates the CoffeeOrder with the customer
   - The database is already seeded with customers for testing purposes
-    - Customer(id=1, name=Bender)
-    - Customer(id=2, name=Leela)
-    - Customer(id=3, name=Phillip J Fry)
+    - Customer(id=1, name="Bender")
+    - Customer(id=2, name="Leela")
+    - Customer(id=3, name="Phillip J Fry")
 
 ### BONUS Methods
 
-- `CoffeeOrder classmethod query_max_or_min()`
-  - Returns the max CoffeeOrder by price from the database as an instance
-- `CoffeeOrder classmethod average()`
-  - Returns the average price of coffee orders in the database
+- `CoffeeOrder classmethod highest_price()`
+  - Returns the CoffeeOrder with the highest price from the database as an instance
+- `Customer classmethod average_price()`
+  - Returns the average price of all of a customer's coffee orders
+- `CoffeeOrder update()`
+  - Updates the coffee order in the database to match any changes to the instance's
+  attributes
+- `CoffeeOrder save()`
+  - Will either create a new entry in the database or update an existing entry
+  for a coffee order based on whether that order has an id
