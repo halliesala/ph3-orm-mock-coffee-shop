@@ -2,8 +2,8 @@
 
 import ipdb
 from lib import CONN, CURSOR
-from lib.classes.c1 import C1
-from lib.classes.c2 import C2
+from lib.classes.customer import Customer
+from lib.classes.coffee_order import CoffeeOrder
 
 if __name__ == '__main__':
     ipdb.set_trace()

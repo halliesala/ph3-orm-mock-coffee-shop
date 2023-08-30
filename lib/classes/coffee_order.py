@@ -1,7 +1,7 @@
 from lib import CONN, CURSOR
-from lib.classes.c2 import C2
+from lib.classes.customer import Customer
 
-class C1:
+class CoffeeOrder:
 
     # THIS METHOD WILL CREATE THE SQL TABLE AND IS GIVEN TO YOU #
     @classmethod
