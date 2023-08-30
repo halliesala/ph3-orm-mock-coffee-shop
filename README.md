@@ -49,45 +49,43 @@ build out any helper methods if needed.
 
 - `CoffeeOrder classmethod create_table()`
   - Creates a `coffee_orders` table with these columns: id (INTEGER), coffee_name (TEXT),
-  price (INTEGER), customer_id (INTEGER)
+  price (INTEGER), customer_id (NUMBER)
 - `CoffeeOrder __init__(coffee_name, price, customer_id, id=None)`
-  - `CoffeeOrder` is initialized with a coffee_name (string) and an price (integer)
-  - When initialized an CoffeeOrder should have an id of None
+  - `CoffeeOrder` is initialized with a coffee_name (string) and a price (integer or float)
+  - When initialized a CoffeeOrder should have an id of None
   - Assume that CoffeeOrders will always be initialized with the proper data types
 - `CoffeeOrder __repr__()`
   - Returns the CoffeeOrder instance in the format below:
   - `CoffeeOrder(id={id} coffee_name={coffee_name}, price={price}, customer_id={customer_id})`
 - `CoffeeOrder property price()`
   - Returns the `CoffeeOrder`'s price
-  - The price must be an integer ADD CONSTRAINTS
+  - The price must be an number greater than 0
 
 ### SQL Methods
 
 - `CoffeeOrder create()`
   - Creates a CoffeeOrder in the database with the instance's attributes
-- `CoffeeOrder update()`
-  - Updates a CoffeeOrder in the database based on the instance's attributes
-- `CoffeeOrder save()`
-  - Will either create or update the CoffeeOrder in the database depending on whether the CoffeeOrder has an id
 - `CoffeeOrder delete()`
   - Deletes the CoffeeOrder from the database
   - No return value is necessary for this method
 - `CoffeeOrder classmethod query_all()`
   - Returns a list of CoffeeOrder instances based on rows in the database
   - The return value ought to be a list of CoffeeOrder instances
+- `CoffeeOrder classmethod query_by_id(id)`
+  - Returns a CoffeeOrder instance from the database that matches the id argument
+  - The return value ought to be a CoffeeOrder instance or None if no CoffeeOrder
+  exists with that id
 
 ### Association Properties
 
 - `CoffeeOrder property customer()`
-  - Returns the C2 that the CoffeeOrder is associated with as an instance
-  - If the CoffeeOrder is not associated with a C2 returns `None`
-  - When setting the customer, if the argument is a `C2` instance it associates the
+  - Returns the Customer that the CoffeeOrder is associated with as an instance
+  - If the CoffeeOrder is not associated with a Customer returns `None`
+  - When setting the customer, if the argument is a `Customer` instance it associates the
   CoffeeOrder with the customer
   - The database is already seeded with a pair of customers for testing purposes
-    - C2(id=1, name=???)
-    - C2(id=2, name=???)
-
-TODO: Seed database
+    - Customer(id=1, name=Dale Cooper)
+    - Customer(id=2, name=Phillip J Fry)
 
 ### BONUS Methods
 
