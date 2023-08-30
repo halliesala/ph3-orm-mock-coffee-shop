@@ -1,8 +1,8 @@
-# Phase 3 ORM Challenge - NAME GOES HERE
+# Phase 3 ORM Mock Challenge - Coffee Shop
 
-For this mock challenge, we'll be working with a domain for a c2.
+For this mock challenge, we'll be working with a domain for a coffee shop.
 
-We have two models: `C1` which shows the c1s who belong to a `C2`.
+We have two models: `CoffeeOrder` which shows the coffee orders which belong to a `Customer`.
 
 ## Topics
 
@@ -17,13 +17,12 @@ We have two models: `C1` which shows the c1s who belong to a `C2`.
 
 To get started, run `pipenv install` while inside of this directory.
 
-Only one of the tables, `c2s` has been created so far. Additionally the `C2`
+Only one of the tables, `customers` has been created so far. Additionally the `Customer`
 class already has its required functionality and you won't have to build
 additional methods for it.
 
-Build out all of the methods listed in the deliverables for `C1`. The methods are listed
-in a suggested order, but you can feel free to tackle the ones you think are
-easiest. Be careful: some of the later methods rely on earlier ones.
+Build out all of the methods listed in the deliverables for `CoffeeOrder`. The methods are listed in a suggested order, but you can feel free to tackle the ones you think
+are easiest. Be careful: some of the later methods rely on earlier ones.
 
 We've provided you with a tool that you can use to test your code. To use it,
 run `python debug.py` from the command line. This will start a `ipdb` session
@@ -48,43 +47,43 @@ build out any helper methods if needed.
 
 ### Initializers and Properties
 
-- `C1 classmethod create_table()`
-  - Creates an `c1s` table with these columns: id (INTEGER), field_one (TEXT),
-  field_two (INTEGER), c2_id (INTEGER)
-- `C1 __init__(field_one, field_two, c2_id, id=None)`
-  - `C1` is initialized with a field_one (string) and an field_two (integer)
-  - When initialized an C1 should have an id of None
-  - Assume that C1s will always be initialized with the proper data types
-- `C1 __repr__()`
-  - Returns the C1 instance in the format below:
-  - `C1(id={id} field_one={field_one}, field_two={field_two}, c2_id={c2_id})`
-- `C1 property field_two()`
-  - Returns the `C1`'s field_two
-  - The field_two must be an integer ADD CONSTRAINTS
+- `CoffeeOrder classmethod create_table()`
+  - Creates a `coffee_orders` table with these columns: id (INTEGER), coffee_name (TEXT),
+  price (INTEGER), customer_id (INTEGER)
+- `CoffeeOrder __init__(coffee_name, price, customer_id, id=None)`
+  - `CoffeeOrder` is initialized with a coffee_name (string) and an price (integer)
+  - When initialized an CoffeeOrder should have an id of None
+  - Assume that CoffeeOrders will always be initialized with the proper data types
+- `CoffeeOrder __repr__()`
+  - Returns the CoffeeOrder instance in the format below:
+  - `CoffeeOrder(id={id} coffee_name={coffee_name}, price={price}, customer_id={customer_id})`
+- `CoffeeOrder property price()`
+  - Returns the `CoffeeOrder`'s price
+  - The price must be an integer ADD CONSTRAINTS
 
 ### SQL Methods
 
-- `C1 create()`
-  - Creates a C1 in the database with the instance's attributes
-- `C1 update()`
-  - Updates a C1 in the database based on the instance's attributes
-- `C1 save()`
-  - Will either create or update the C1 in the database depending on whether the C1 has an id
-- `C1 delete()`
-  - Deletes the C1 from the database
+- `CoffeeOrder create()`
+  - Creates a CoffeeOrder in the database with the instance's attributes
+- `CoffeeOrder update()`
+  - Updates a CoffeeOrder in the database based on the instance's attributes
+- `CoffeeOrder save()`
+  - Will either create or update the CoffeeOrder in the database depending on whether the CoffeeOrder has an id
+- `CoffeeOrder delete()`
+  - Deletes the CoffeeOrder from the database
   - No return value is necessary for this method
-- `C1 classmethod query_all()`
-  - Returns a list of C1 instances based on rows in the database
-  - The return value ought to be a list of C1 instances
+- `CoffeeOrder classmethod query_all()`
+  - Returns a list of CoffeeOrder instances based on rows in the database
+  - The return value ought to be a list of CoffeeOrder instances
 
 ### Association Properties
 
-- `C1 property c2()`
-  - Returns the C2 that the C1 is associated with as an instance
-  - If the C1 is not associated with a C2 returns `None`
-  - When setting the c2, if the argument is a `C2` instance it associates the
-  C1 with the c2
-  - The database is already seeded with a pair of c2s for testing purposes
+- `CoffeeOrder property customer()`
+  - Returns the C2 that the CoffeeOrder is associated with as an instance
+  - If the CoffeeOrder is not associated with a C2 returns `None`
+  - When setting the customer, if the argument is a `C2` instance it associates the
+  CoffeeOrder with the customer
+  - The database is already seeded with a pair of customers for testing purposes
     - C2(id=1, name=???)
     - C2(id=2, name=???)
 
@@ -92,7 +91,7 @@ TODO: Seed database
 
 ### BONUS Methods
 
-- `C1 classmethod query_max_or_min()`
-  - Returns the max C1 by field_two from the database as an instance
-- `C1 classmethod average()`
-  - Returns the average field_two of c1s in the database
+- `CoffeeOrder classmethod query_max_or_min()`
+  - Returns the max CoffeeOrder by price from the database as an instance
+- `CoffeeOrder classmethod average()`
+  - Returns the average price of coffee orders in the database
