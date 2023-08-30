@@ -83,9 +83,10 @@ build out any helper methods if needed.
   - If the CoffeeOrder is not associated with a Customer returns `None`
   - When setting the customer, if the argument is a `Customer` instance it associates the
   CoffeeOrder with the customer
-  - The database is already seeded with a pair of customers for testing purposes
-    - Customer(id=1, name=Dale Cooper)
-    - Customer(id=2, name=Phillip J Fry)
+  - The database is already seeded with customers for testing purposes
+    - Customer(id=1, name=Bender)
+    - Customer(id=2, name=Leela)
+    - Customer(id=3, name=Phillip J Fry)
 
 ### BONUS Methods
 
